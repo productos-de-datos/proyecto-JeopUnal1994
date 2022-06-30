@@ -18,15 +18,14 @@ def make_features():
     #Creamos un archivo copia de precios-diarios.csv en la carpeta features 
     shutil.copy('data_lake/business/precios-diarios.csv', 'data_lake/business/features/precios_diarios.csv')
 
-    return
-
-    raise NotImplementedError("Implementar esta función")
+    #raise NotImplementedError("Implementar esta función")
 
 
 if __name__ == "__main__":
     import doctest
 
     doctest.testmod()
+    make_features()
 
-#----------llamado de funcion-------------
-make_features()
+
+

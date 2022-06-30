@@ -17,28 +17,29 @@ def transform_data():
     #es necesario eliminar. Se toma las 25 columnas correspondiente a fecha y 24 horas
     for num in range(1995, 2022):        
         if num in range(1995, 2000):
-            data_csv = pd.read_excel('data_lake/landing/{}.xlsx'.format(num), header=3)
+            data_csv = pd.read_excel('data_lake/landing/{}.{}'.format(num, 'xlsx'), header=3)
             data_csv = data_csv.iloc[:, 0:25]
             data_csv.columns = encabezado       
             data_csv.to_csv('data_lake/raw/{}.csv'.format(num),index=None)
         elif(num in range(2000, 2016)):
-            data_csv = pd.read_excel('data_lake/landing/{}.xlsx'.format(num), header=2)
+            data_csv = pd.read_excel('data_lake/landing/{}.{}'.format(num, 'xlsx'), header=2)
             data_csv = data_csv.iloc[:, 0:25]
             data_csv.columns = encabezado             
             data_csv.to_csv('data_lake/raw/{}.csv'.format(num),index=None)
         elif(num in range(2016, 2018)):
-            data_csv = pd.read_excel('data_lake/landing/{}.xls'.format(num), header=2)
+            data_csv = pd.read_excel('data_lake/landing/{}.{}'.format(num, 'xls'), header=2)
             data_csv = data_csv.iloc[:, 0:25]
             data_csv.columns = encabezado             
             data_csv.to_csv('data_lake/raw/{}.csv'.format(num), index=None)
         else:
-            data_csv = pd.read_excel('data_lake/landing/{}.xlsx'.format(num), header=0)
+            data_csv = pd.read_excel('data_lake/landing/{}.{}'.format(num, 'xlsx'), header=0)
             data_csv = data_csv.iloc[:, 0:25]
             data_csv.columns = encabezado            
             data_csv.to_csv('data_lake/raw/{}.csv'.format(num), index=None)
-    return
 
-    raise NotImplementedError("Implementar esta función")
+    #return
+
+    #raise NotImplementedError("Implementar esta función")
 
 
 if __name__ == "__main__":

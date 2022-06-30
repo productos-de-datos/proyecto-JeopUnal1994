@@ -32,9 +32,9 @@ def create_data_lake():
     os.makedirs('data_lake/business/features', exist_ok=True)
     os.makedirs('data_lake/business/forecasts', exist_ok=True)
     
-    return
+    #return
 
-    raise NotImplementedError("Implementar esta función")
+    #raise NotImplementedError("Implementar esta función")
 
 
 if __name__ == "__main__":

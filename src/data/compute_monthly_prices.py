@@ -22,11 +22,14 @@ def compute_monthly_prices():
     #Realizamos la agrupacion por fecha, mes y sacamos la media 
     data = data.set_index("fecha").resample("M")["precio"].mean()
 
-
     data.to_csv("data_lake/business/precios-mensuales.csv", index=True)
 
     #raise NotImplementedError("Implementar esta función")
 
+def test_cantidad_meses():
+    from compute_monthly_prices import data 
+    #los datos van desde el mes 7 de 1995, hasta el mes 4 de 2021 para un equivalente a 310 meses
+    assert len(data) == 310
 
 if __name__ == "__main__":
     import doctest

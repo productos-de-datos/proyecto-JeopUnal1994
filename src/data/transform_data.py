@@ -36,6 +36,9 @@ def transform_data():
             data_csv = data_csv.iloc[:, 0:25]
             data_csv.columns = encabezado            
             data_csv.to_csv('data_lake/raw/{}.csv'.format(num), index=None)
+            
+def test_answer():
+    assert ruta('2021', "xlsx") == "data_lake/landing/2021.xlsx"
 
     #return
 

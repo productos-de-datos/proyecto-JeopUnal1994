@@ -34,15 +34,15 @@ def make_daily_prices_plot():
     #Lo guardamos en una imagen .png
     plt.savefig("data_lake/business/reports/figures/daily_prices.png")
 
-    return
-
-    raise NotImplementedError("Implementar esta función")
+    
+    #raise NotImplementedError("Implementar esta función")
 
 
 if __name__ == "__main__":
     import doctest
 
     doctest.testmod()
+    make_daily_prices_plot()
 
-#----------llamado de funcion-------------
-make_daily_prices_plot()
+
+

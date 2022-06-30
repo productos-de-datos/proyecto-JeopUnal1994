@@ -33,15 +33,13 @@ def make_monthly_prices_plot():
     #Lo guardamos en una imagen .png
     plt.savefig("data_lake/business/reports/figures/monthly_prices.png")
 
-    return
-
-    raise NotImplementedError("Implementar esta función")
+    #raise NotImplementedError("Implementar esta función")
 
 
 if __name__ == "__main__":
     import doctest
 
     doctest.testmod()
+    make_monthly_prices_plot()
 
-#----------llamado de funcion-------------
-make_monthly_prices_plot()
+

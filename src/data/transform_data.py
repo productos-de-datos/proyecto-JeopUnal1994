@@ -37,7 +37,6 @@ def transform_data():
             data_csv.columns = encabezado            
             data_csv.to_csv('data_lake/raw/{}.csv'.format(num), index=None)
 
-    #return
 
     #raise NotImplementedError("Implementar esta función")
 
@@ -46,6 +45,7 @@ if __name__ == "__main__":
     import doctest
 
     doctest.testmod()
+    transform_data()
 
-#----------llamado de funcion-------------
-transform_data()
+
+

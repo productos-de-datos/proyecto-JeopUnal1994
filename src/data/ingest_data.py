@@ -39,6 +39,6 @@ if __name__ == "__main__":
     import doctest
 
     doctest.testmod()
+    ingest_data()
 
-#----------llamado de funcion-------------
-ingest_data()
+

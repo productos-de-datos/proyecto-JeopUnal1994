@@ -25,16 +25,15 @@ def compute_monthly_prices():
 
     data.to_csv("data_lake/business/precios-mensuales.csv", index=True)
 
-    return
-
-    raise NotImplementedError("Implementar esta función")
+    #raise NotImplementedError("Implementar esta función")
 
 
 if __name__ == "__main__":
     import doctest
 
     doctest.testmod()
+    compute_monthly_prices()
 
-#----------llamado de funcion-------------
-compute_monthly_prices()
+
+
 

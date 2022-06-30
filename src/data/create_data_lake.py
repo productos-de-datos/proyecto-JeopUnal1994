@@ -22,8 +22,9 @@ def create_data_lake():
 
     
     """
-    #Creamos carpetas recursivas usando la funcion makedirs del modulo os
+    #Creamos carpetas  usando la funcion mkdir del modulo os
     import os
+
     os.mkdir('./data_lake/')
     parent_dir = 'data_lake/'
     carpetas = ['landing', 'raw', 'cleansed', 'business']
@@ -35,7 +36,6 @@ def create_data_lake():
     directory = 'figures'
     os.mkdir(os.path.join(parent_dir, directory))
     
-    #return
 
     #raise NotImplementedError("Implementar esta función")
 
@@ -44,6 +44,6 @@ if __name__ == "__main__":
     import doctest
 
     doctest.testmod()
+    create_data_lake()
 
-#----------llamado de funcion-------------
-create_data_lake()
+

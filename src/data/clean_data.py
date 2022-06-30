@@ -50,17 +50,16 @@ def clean_data():
 
     df.to_csv("data_lake/cleansed/precios-horarios.csv", index=None, header=True)
 
-    return
-
-
-    raise NotImplementedError("Implementar esta función")
+    
+    #raise NotImplementedError("Implementar esta función")
 
 
 if __name__ == "__main__":
     import doctest
 
     doctest.testmod()
+    clean_data()
 
-#----------llamado de funcion-------------
-clean_data()
+
+
 

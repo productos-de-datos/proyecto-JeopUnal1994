@@ -22,18 +22,15 @@ def compute_daily_prices():
     #Agrupamos por fecha y sacamos la media al precio
     compute_daily_prices = df.groupby("fecha").mean({"precio": "precio"})
     compute_daily_prices.reset_index(inplace=True)
-    compute_daily_prices.to_csv(
-        "data_lake/business/precios-diarios.csv", index=None, header=True)
+    compute_daily_prices.to_csv("data_lake/business/precios-diarios.csv", index=None, header=True)
 
-    return
-
-    raise NotImplementedError("Implementar esta función")
+    #raise NotImplementedError("Implementar esta función")
 
 
 if __name__ == "__main__":
     import doctest
 
     doctest.testmod()
+    compute_daily_prices()
 
-#----------llamado de funcion-------------
-compute_daily_prices()
+

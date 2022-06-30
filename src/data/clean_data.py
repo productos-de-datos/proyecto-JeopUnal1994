@@ -38,15 +38,17 @@ def clean_data():
     lista_datos = []
     precio = 0
     contador_filas = 0
+
     for fecha in fechas:
         for hora in range(0, 24):
             precio = (read_file.iloc[contador_filas, (hora+1)])
             lista_datos.append([fecha, hora, precio])
         contador_filas += 1
+
     df = pd.DataFrame(lista_datos, columns=["fecha", "hora", "precio"])
-    df = df[df["fecha"].notnull()]
-    df.to_csv("data_lake/cleansed/precios-horarios.csv",
-              index=None, header=True)
+    df = df[df["precio"].notnull()]
+
+    df.to_csv("data_lake/cleansed/precios-horarios.csv", index=None, header=True)
 
     return
 

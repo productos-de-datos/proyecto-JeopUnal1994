@@ -24,13 +24,16 @@ def create_data_lake():
     """
     #Creamos carpetas recursivas usando la funcion makedirs del modulo os
     import os
-
-    os.makedirs("data_lake/landing", exist_ok=True)
-    os.makedirs('data_lake/raw', exist_ok=True)
-    os.makedirs('data_lake/cleansed', exist_ok=True)
-    os.makedirs('data_lake/business/reports/figures', exist_ok=True)
-    os.makedirs('data_lake/business/features', exist_ok=True)
-    os.makedirs('data_lake/business/forecasts', exist_ok=True)
+    os.mkdir('./data_lake/')
+    parent_dir = 'data_lake/'
+    carpetas = ['landing', 'raw', 'cleansed', 'business']
+    [os.mkdir(os.path.join(parent_dir, c)) for c in carpetas]
+    parent_dir = 'data_lake/business/'
+    carpetas = ['reports', 'features', 'forecasts']
+    [os.mkdir(os.path.join(parent_dir, c)) for c in carpetas]
+    parent_dir = 'data_lake/business/reports/'
+    directory = 'figures'
+    os.mkdir(os.path.join(parent_dir, directory))
     
     #return
 

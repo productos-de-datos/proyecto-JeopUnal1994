@@ -14,24 +14,23 @@ def ingest_data():
 
     """
 
-    import wget
-    import os
+    import requests
 
     #Observamos que algunos archivos del repositorio tienen extension .xls y otros .xlsx, definimos
     #para cada caso como descargar el archivo.
 
-    os.chdir('data_lake/landing/')
+
     #Ciclo for para recorrer el numero de años (archivos a descargar) segun su extension 
     for num in range(1995, 2022):
         if num in range(2016, 2018):
             url = 'https://github.com/jdvelasq/datalabs/blob/master/datasets/precio_bolsa_nacional/xls/{}.xls?raw=true'.format(num)
-            wget.download(url)
+            file = requests.get(url, allow_redirects=True)
+            open('data_lake/landing/{}.xls'.format(num), 'wb').write(file.content)
         else:
             url = 'https://github.com/jdvelasq/datalabs/blob/master/datasets/precio_bolsa_nacional/xls/{}.xlsx?raw=true'.format(num)
-            wget.download(url)
-    os.chdir('../../')
+            file = requests.get(url, allow_redirects=True)
+            open('data_lake/landing/{}.xlsx'.format(num), 'wb').write(file.content)
 
-    #return
 
     #raise NotImplementedError("Implementar esta función")
 

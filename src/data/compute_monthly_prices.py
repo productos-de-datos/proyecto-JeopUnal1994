@@ -26,10 +26,12 @@ def compute_monthly_prices():
 
     #raise NotImplementedError("Implementar esta función")
 
-def test_cantidad_meses():
-    from compute_monthly_prices import data 
-    #los datos van desde el mes 7 de 1995, hasta el mes 4 de 2021 para un equivalente a 310 meses
-    assert len(data) == 310
+    ### TEST ###
+    def test_cantidad_meses():
+    #los datos van desde el mes 7 de 1995, hasta el mes 4 de 2021 para un equivalente a 310 meses por lo
+    #cual si se saco el promedio mensual, deben haber 310 registros.
+        assert len(data) == 310
+
 
 if __name__ == "__main__":
     import doctest

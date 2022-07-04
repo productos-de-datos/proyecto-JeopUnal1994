@@ -53,6 +53,14 @@ def clean_data():
     
     #raise NotImplementedError("Implementar esta función")
 
+### TEST ###
+#Verificamos que el archivo de data limpia, quede correcto al verificar su encabezado 
+def test_clean_data():
+    import pandas as pd
+    encabezado = ["fecha", "hora", "precio"]
+    data = pd.read_csv("data_lake/cleansed/precios-horarios.csv")
+    assert data.columns == encabezado
+
 
 if __name__ == "__main__":
     import doctest

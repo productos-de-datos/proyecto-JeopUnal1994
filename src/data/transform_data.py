@@ -40,6 +40,15 @@ def transform_data():
 
     #raise NotImplementedError("Implementar esta función")
 
+### TEST ###
+#Verificamos que los archivos que hemos tranformado de xls y csv, queden correctos al verificar
+#su encabezado 
+def test_transform_data():
+    import pandas as pd
+    encabezado = ['Fecha', 'H00', 'H01', 'H02', 'H03', 'H04', 'H05', 'H06', 'H07', 'H08', 'H09', 'H10', 'H11', 'H12', 'H13', 'H14', 'H15', 'H16', 'H17', 'H18', 'H19', 'H20', 'H21', 'H22', 'H23']
+    data = pd.read_csv("data_lake/raw/1995.csv")
+    assert data.columns == encabezado
+
 
 if __name__ == "__main__":
     import doctest

@@ -49,7 +49,6 @@ def clean_data():
     df = df[df["precio"].notnull()]
 
     df.to_csv("data_lake/cleansed/precios-horarios.csv", index=None, header=True)
-
     
     #raise NotImplementedError("Implementar esta función")
 
@@ -59,7 +58,7 @@ def test_clean_data():
     import pandas as pd
     encabezado = ["fecha", "hora", "precio"]
     data = pd.read_csv("data_lake/cleansed/precios-horarios.csv")
-    assert data.columns == encabezado
+    assert (data.columns == encabezado).all()
 
 
 if __name__ == "__main__":
@@ -67,6 +66,7 @@ if __name__ == "__main__":
 
     doctest.testmod()
     clean_data()
+
 
 
 
